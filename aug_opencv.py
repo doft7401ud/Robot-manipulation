@@ -11,7 +11,8 @@ for k in os.listdir(dishDir):
     for j in os.listdir('C:\\Users\\goodb\\Desktop\\PythonPractice\\aaa1230\\test_result\\Photos\\' + k):
     # Load the image
         while(True):
-            ran_num_list=[random.randrange(2) for i in range(7)]
+            ran_num_list=[1,random.randrange(2),random.randrange(2),1,random.randrange(2),random.randrange(2)]
+            #print(ran_num_list)
             if 1 in ran_num_list:
                 break
         print(ran_num_list)
@@ -37,16 +38,16 @@ for k in os.listdir(dishDir):
                 pts_x = np.random.randint(0, col-1 , noize_degree*1000000)
                 pts_y = np.random.randint(0, row-1 , noize_degree*1000000)
                 image[(pts_y,pts_x)] = (0,0,0)
-             
-            if ran_num_list[4]==1:
-                continue
+                
+            #if ran_num_list[4]==1 & :
+                #continue
                 # 拡大縮小
             # 元画像4096*3072
             
-            if ran_num_list[5]==1:
+            if ran_num_list[4]==1:
                 # 明るさ
                 image = cv2.convertScaleAbs(image,alpha = (random.randint(5,15))/10,beta = random.randint(-50,50))
-            if ran_num_list[6]==1:
+            if ran_num_list[5]==1:
                 # ぼかしバンバンジー豆腐
                 how_blur=random.randint(2,8)*10
                 image = cv2.blur(image, (how_blur, how_blur))
